@@ -5,4 +5,4 @@ services:
   db:
     build: db
     ports:
-      - "5432:5432"
+      - "5431:5432"
