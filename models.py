@@ -7,7 +7,7 @@ from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.exc import IntegrityError
 from hashlib import md5
 
-# PG_DSN = "postgresql://admin:1234@127.0.0.1:5431/flask_netology"
+
 PG_DSN = "postgresql://oks:@localhost:5432/posts_flask"
 engine = sq.create_engine(PG_DSN)
 Base = declarative_base()
@@ -90,10 +90,12 @@ class AdvertisementModel(Base):
         advertisements = session.query(cls).all()
         return [adv.to_dict() for adv in advertisements]
 
+
 class Token(Base):
     __tablename__ = 'tokens'
     id = sq.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     created_date = sq.Column(sq.DateTime, server_default=sq.func.now())
     user_id = sq.Column(sq.Integer, sq.ForeignKey('users.id'))
+
 
 Base.metadata.create_all(engine)

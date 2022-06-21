@@ -2,12 +2,6 @@ import pydantic
 import flask
 from flask import request, jsonify
 from flask.views import MethodView
-from hashlib import md5
-import sqlalchemy as sq
-from sqlalchemy.orm import sessionmaker, relationship
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.exc import IntegrityError
-
 from models import UserModel, AdvertisementModel, Session, Token
 
 
@@ -113,6 +107,7 @@ class AdvertisementView(MethodView):
                 session.delete(adv_for_del)
                 session.commit()
             raise HTTPError(204, 'successfully deleted')
+
 
 app.add_url_rule(
     '/user',
