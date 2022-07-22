@@ -1,4 +1,4 @@
-from flask_posts.models import UserModel
+from models import UserModel
 
 def test_new_user():
   user = UserModel("qwa@mail.ru", "password")
