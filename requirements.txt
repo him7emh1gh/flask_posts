@@ -16,3 +16,4 @@ SQLAlchemy==1.4.36
 urllib3==1.26.9
 Werkzeug==2.1.2
 zipp==3.8.0
+pytest==5.4.3
