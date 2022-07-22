@@ -40,4 +40,4 @@ jobs:
       # Run our unit tests
       - name: Run unit tests
         run: |
-          pytest --cov=flask_posts /
+          pytest --cov=flask_posts tests/
