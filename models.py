@@ -23,7 +23,12 @@ class UserModel(Base):
     registration = sq.Column(sq.DateTime, server_default=sq.func.now())
     advertisements = relationship('AdvertisementModel', backref='owner')
     token = relationship('Token', uselist=False, backref='user')
-
+    
+    def test_new_user():
+        user = UserModel("qwa@mail.ru", "password")
+        assert user.email == "qwa@mail.ru"
+        assert user.token != "password"
+        
     def to_dict(self):
         return {
             'user_name': self.user_name,
