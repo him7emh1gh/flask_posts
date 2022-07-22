@@ -12,7 +12,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v2
 
-      # Set up Python 3.6 environment
+      # Set up Python 3.9 environment
       - name: Set up Python 3.9
         uses: actions/setup-python@v1
         with:
@@ -52,11 +52,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v2
 
-      # Set up Python 3.6 environment
-      - name: Set up Python 3.6
+      # Set up Python 3.9 environment
+      - name: Set up Python 3.9
         uses: actions/setup-python@v1
         with:
-          python-version: "3.6"
+          python-version: "3.9"
 
       # Set up cache for pip
       - name: Get pip cache dir
