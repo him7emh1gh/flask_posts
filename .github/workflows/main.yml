@@ -40,4 +40,4 @@ jobs:
       # Run our unit tests
       - name: Run unit tests
         run: |
-          coverage run -m pytest test_application.py
+          coverage run -m pytest test_application.py & coverage report -m
